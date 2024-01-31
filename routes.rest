@@ -1,0 +1,78 @@
+// LOCALHOST TASKS ROUTES
+
+### Get all tasks
+GET http://localhost:8080/tasks
+
+### Request a single task
+GET http://localhost:8080/tasks/65b9e84368cce8d5087c38cd
+
+### Create a new contact
+POST http://localhost:8080/tasks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "new tasssdssadsadsadsak",
+    "description": "Thissadsadsada is a new task",
+    "status": "Pendiasdsadasng",
+    "due_date": "01/3sasdsad1/2024",
+    "created_at": "01asdsad/30/2024",
+    "assigned_user": "lasdasduis_1",
+    "priority": "high"
+}
+
+### Update a task information
+PUT http://localhost:8080/tasks/65b9e84368cce8d5087c38cd HTTP/1.1
+content-Type: application/json
+
+{
+    "title": "",
+    "description": "This is a new",
+    "status": "Pendinsssg",
+    "due_date": "01/31/2024",
+    "created_at": "01/30/2024",
+    "assigned_user": "luis_1",
+    "priority": "high"
+}
+
+### Delete task
+DELETE http://localhost:8080/tasks/65b9e84368cce8d5087c38cd
+
+
+
+
+
+
+
+
+
+// LOCALHOST USERS ROUTES
+
+### Get all users
+GET http://localhost:8080/users
+
+### Request a single user
+GET http://localhost:8080/users/65b9e94968cce8d5087c38ce
+
+### Create a new user
+POST http://localhost:8080/users HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Luis",
+    "lastName": "Chavez",
+    "email": "luis@chavez.com",
+    "password": "26171747Jj12345*"
+}
+
+### Update an user account information
+PUT http://localhost:8080/users/65b9e94968cce8d5087c38ce HTTP/1.1
+content-Type: application/json
+
+{
+    "firstName": "Luis",
+    "lastName": "Leal",
+    "email": "luis@chavezzzz.com"
+}
+
+### Delete user account
+DELETE http://localhost:8080/users/65b9e94968cce8d5087c38ce
