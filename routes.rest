@@ -76,3 +76,89 @@ content-Type: application/json
 
 ### Delete user account
 DELETE http://localhost:8080/users/65b9e94968cce8d5087c38ce
+
+
+
+
+
+
+
+
+// RENDER TASKS ROUTES
+
+### Get all tasks
+GET https://to-do-list-api-4hq6.onrender.com/tasks
+
+### Request a single task
+GET https://to-do-list-api-4hq6.onrender.com/tasks/65b9e84368cce8d5087c38cd
+
+### Create a new contact
+POST https://to-do-list-api-4hq6.onrender.com/tasks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "new tasssdssadsadsadsak",
+    "description": "Thissadsadsada is a new task",
+    "status": "Pendiasdsadasng",
+    "due_date": "01/3sasdsad1/2024",
+    "created_at": "01asdsad/30/2024",
+    "assigned_user": "lasdasduis_1",
+    "priority": "high"
+}
+
+### Update a task information
+PUT https://to-do-list-api-4hq6.onrender.com/tasks/65b9e84368cce8d5087c38cd HTTP/1.1
+content-Type: application/json
+
+{
+    "title": "",
+    "description": "This is a new",
+    "status": "Pendinsssg",
+    "due_date": "01/31/2024",
+    "created_at": "01/30/2024",
+    "assigned_user": "luis_1",
+    "priority": "high"
+}
+
+### Delete task
+DELETE https://to-do-list-api-4hq6.onrender.com/tasks/65b9e84368cce8d5087c38cd
+
+
+
+
+
+
+
+
+
+// RENDER USERS ROUTES
+
+### Get all users
+GET https://to-do-list-api-4hq6.onrender.com/users
+
+### Request a single user
+GET https://to-do-list-api-4hq6.onrender.com/users/65b9e94968cce8d5087c38ce
+
+### Create a new user
+POST https://to-do-list-api-4hq6.onrender.com/users HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Luis",
+    "lastName": "Chavez",
+    "email": "luis@chavez.com",
+    "password": "26171747Jj12345*"
+}
+
+### Update an user account information
+PUT https://to-do-list-api-4hq6.onrender.com/users/65b9e94968cce8d5087c38ce HTTP/1.1
+content-Type: application/json
+
+{
+    "firstName": "Luis",
+    "lastName": "Leal",
+    "email": "luis@chavezzzz.com"
+}
+
+### Delete user account
+DELETE https://to-do-list-api-4hq6.onrender.com/users/65b9e94968cce8d5087c38ce
