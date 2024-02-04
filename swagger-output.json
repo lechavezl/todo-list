@@ -5,10 +5,10 @@
     "description": "To-Do List API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "to-do-list-api-4hq6.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {      
     "/tasks/": {
