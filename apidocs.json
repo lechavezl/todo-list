@@ -1,0 +1,352 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "To-Do List API",
+      "description": "To-Do List API",
+      "version": "1.0.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/login": {
+        "get": {
+            "tags": [
+                "OAuth"
+            ],
+            "description": "OAuth login",
+            "responses": {
+                "default": {
+                    "description": ""
+                }
+            }
+        }
+      },
+      "/logout": {
+        "get": {
+            "tags": [
+                "OAuth"
+            ],
+            "description": "OAuth login",
+            "responses": {
+                "default": {
+                    "description": ""
+                }
+            }
+        }
+      },        
+      "/tasks/": {
+        "get": {
+          "tags": [
+            "tasks"
+          ],
+          "description": "Get all Tasks from the database",
+          "responses": {
+            "204": {
+              "description": "Request succesfull"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "tasks"
+          ],
+          "description": "Create a new task",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "example": "Test Task"
+                  },
+                  "description": {
+                    "example": "This is a new task"
+                  },
+                  "status": {
+                    "example": "pending, in progress, or completed"
+                  },
+                  "due_date": {
+                    "example": "05/10/2024"
+                  },
+                  "created_at": {
+                    "example": "01/31/2024"
+                  },
+                  "assigned_user": {
+                    "example": "task user id"
+                  },
+                  "priority": {
+                    "example": "high, medium, or low"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "New user created succesfully"
+            },
+            "422": {
+              "description": "Unprocessable Entity"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/tasks/{id}": {
+        "get": {
+          "tags": [
+            "tasks"
+          ],
+          "description": "Get a single task by using id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Request succesfull"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "tasks"
+          ],
+          "description": "Update a task",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "example": "Test Task"
+                  },
+                  "description": {
+                    "example": "This is a new task"
+                  },
+                  "status": {
+                    "example": "pending, in progress, or completed"
+                  },
+                  "due_date": {
+                    "example": "05/10/2024"
+                  },
+                  "created_at": {
+                    "example": "01/31/2024"
+                  },
+                  "assigned_user": {
+                    "example": "task user id"
+                  },
+                  "priority": {
+                    "example": "high, medium, or low"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Task update successfully"
+            },
+            "422": {
+              "description": "Unprocessable Entity"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "tasks"
+          ],
+          "description": "Delete a task using an id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Tasks deleted succesfully"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/users/": {
+        "get": {
+          "tags": [
+            "users"
+          ],
+          "description": "Get all users from the database",
+          "responses": {
+            "200": {
+              "description": "User request succesfull"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "users"
+          ],
+          "description": "Create a new user",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "example": "First Name"
+                  },
+                  "lastName": {
+                    "example": "Last Name"
+                  },
+                  "email": {
+                    "example": "test@example.com"
+                  },
+                  "password": {
+                    "example": "123456789Aa*"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User create successfully"
+            },
+            "422": {
+              "description": "Unprocessable Entity"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/users/{id}": {
+        "get": {
+          "tags": [
+            "users"
+          ],
+          "description": "Get a single user by using id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Request Succesfull"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "users"
+          ],
+          "description": "Update an user data",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": {
+                    "example": "First Name"
+                  },
+                  "lastName": {
+                    "example": "Last Name"
+                  },
+                  "email": {
+                    "example": "test@example.com"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User update succesfully"
+            },
+            "422": {
+              "description": "Unprocessable Entity"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "users"
+          ],
+          "description": "Delete an user using an id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User deleted successfully"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      }
+    }
+  }
